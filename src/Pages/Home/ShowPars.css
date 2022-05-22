@@ -1,0 +1,6 @@
+.like-container span {
+  display: none;
+}
+.like-container:hover span {
+  display: block;
+}

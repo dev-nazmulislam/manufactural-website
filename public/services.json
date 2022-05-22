@@ -1,0 +1,118 @@
+[
+  {
+    "product_type": "Graphics Card",
+    "name": "Asus Phoenix GeForce GTX 1050Ti 4GB Premium Edition",
+    "price": 3000,
+    "abalableQuantity": 5000,
+    "overview": [
+      "Chipset NVIDIA GeForce",
+      "HDMI Port 1",
+      "Capacity (GB/TB) 4GB",
+      "Graphics Resolution Max. 7680 x 4320",
+      "Multi Display Capability Triple Display"
+    ],
+    "description": "Based on NVIDIA's Pascal architecture, the ASUS Phoenix GeForce GTX 1050 Ti Graphics Card provides major improvements in performance, memory bandwidth, and power efficiency over its predecessor, the Maxwell architecture. The front panel of the card features a variety of outputs including DisplayPort 1.4 output, one HDMI 2.0b output, and one DVI-D Dual-Link output.",
+    "orderQuantity": 12,
+    "img": [
+      "https://i.ibb.co/BCvdNWT/03.webp",
+      "https://i.ibb.co/vLSzJ7h/01.webp",
+      "https://i.ibb.co/3mp5WsX/02.webp"
+    ]
+  },
+  {
+    "product_type": "Casing Fan",
+    "name": "Thermaltake Riing Plus 12 RGB TT Premium Edition Fan",
+    "price": 1500,
+    "abalableQuantity": 400,
+    "overview": [
+      "Type Casing Cooling Fan",
+      "Blade Qty 9",
+      "Fan Speed 1500 RPM",
+      "Fan Size (Height) 120mm"
+    ],
+    "description": "Thermaltake combines the patented gorgeous LED light with cutting-edge technology to deliver a brand new experience of using PC cooling, Thermaltake Riing Plus 12 LED RGB Radiator Fan TT Premium Edition.",
+    "orderQuantity": 12,
+    "img": [
+      "https://i.ibb.co/vqSwTBk/03.webp",
+      "https://i.ibb.co/bg60mm0/01.webp",
+      "https://i.ibb.co/D9hSCRH/02.webp"
+    ]
+  },
+  {
+    "product_type": "UPS",
+    "name": "Power Guard PG1200VA-PS 1200VA Offline UPS",
+    "price": 5500,
+    "abalableQuantity": 500,
+    "overview": [
+      "Type Offline UPS",
+      "Body Material Full Metal",
+      "Load Capacity 720W",
+      "Input Voltage (V) 145-280V",
+      "Output Voltage (V) 220/230 VAC +/-10%",
+      "Back up time(Full load) 35-40 Min. (1Pc & 1 Monitor)"
+    ],
+    "description": "Model - Power Guard PG1200VA-PS 1200VA, Type - Offline UPS, Input Voltage (V) - 145-280 VAC, Output Voltage (V) - 220/230 VAC +/-10%, Frequency (Hz) - 50/60Hz +/-5%, Transfer Rate (ms) - 2-6 ms Typical, Battery(Qty with V & A) - 2 Pcs with 12V & 8.2Ah, Load Capacity (Watt) - 720 W, Back up time(Full load) - 35-40 Minutes (1PC & 1 Monitor), LED Display - Yes, Fuse - Yes.",
+    "orderQuantity": 12,
+    "img": [
+      "https://i.ibb.co/0QyJPts/01.webp",
+      "https://i.ibb.co/YpxG9Js/02.webp"
+    ]
+  },
+  {
+    "product_type": "Keyboard",
+    "name": "Havit KB329 Black USB Mini Keyboard with Bangla",
+    "price": 420,
+    "abalableQuantity": 1200,
+    "overview": [
+      "Type USB Mini Keyboard",
+      "Lighting No",
+      "Interface USB",
+      "Mouse, Touchpad Keyboard only",
+      "Mechanical (Key) No"
+    ],
+    "description": "Brand - Havit, Model - Havit KB329, Series - Regular, Style & Size - Regular Small, Type - USB Mini Keyboard, Interface - USB, Language (English) - Yes, Language - English & Bangla, Language (Bangla) - Yes, Lighting - No, Mechanical (Key) - No, Mouse, Touchpad - Keyboard only, Color - Black, Part No - KB329, Warranty - 1 Year, Country of Origin - China, Made in/ Assemble - China",
+    "orderQuantity": 12,
+    "img": [
+      "https://i.ibb.co/WDR1Qjf/02.webp",
+      "https://i.ibb.co/ncXg7vt/03.webp"
+    ]
+  },
+  {
+    "product_type": "Mouse Pad",
+    "name": "Rapoo VPRO V1000 Black Gaming Mouse Pad",
+    "price": 820,
+    "abalableQuantity": 5000,
+    "overview": [
+      "Type Gaming Mouse Pad",
+      "LED Light No",
+      "Dimensions 800 x 350 x 3mm",
+      "Connectivity No"
+    ],
+    "description": "The heat-treated woven fabric surface enhances the smooth movement of the mouse at high speed; the surface texture optimized for various sensors; the 3 mm thick rubber base is stable even in the intense game. Surface texture optimized for various sensors. 3mm thick rubber base Even this intense game is a steady as ever. Exquisite Seaming process.",
+    "orderQuantity": 60,
+    "img": [
+      "https://i.ibb.co/HnY9D8Z/03.webp",
+      "https://i.ibb.co/nrcbKJ9/01.webp",
+      "https://i.ibb.co/7GXTQnn/02.webp"
+    ]
+  },
+  {
+    "product_type": "Desktop Ram",
+    "name": "Asus Phoenix GeForce GTX 1050Ti 4GB GDDR5 Gr",
+    "price": 1000,
+    "abalableQuantity": 5000,
+    "overview": [
+      "RAM Type DDR4",
+      "Number of Pin 288 Pin",
+      "Bus Speed(MHz) 2666MHz",
+      "Capacity (GB/TB) 4GB"
+    ],
+    "description": "Based on NVIDIA's Pascal architecture, the ASUS Phoenix GeForce GTX 1050 Ti Graphics Card provides major improvements in performance, memory bandwidth, and power efficiency over its predecessor, the Maxwell architecture. The front panel of the card features a variety of outputs including DisplayPort 1.4 output, one HDMI 2.0b output, and one DVI-D Dual-Link output.",
+    "orderQuantity": 12,
+    "img": [
+      "https://i.ibb.co/DQJBxDV/03.webp",
+      "https://i.ibb.co/nRjdN5D/01.webp",
+      "https://i.ibb.co/cvMx2nf/02.webp"
+    ]
+  }
+]
