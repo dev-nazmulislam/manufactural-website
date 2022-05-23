@@ -40,7 +40,7 @@ const BussnessSummary = () => {
           <h1>Feedbacks</h1>
         </div>
       </div>
-      <div className="hero py-10 bg-white card">
+      <div className="hero py-10 px-2 bg-white card">
         <div className="hero-content px-0 flex-col lg:flex-row gap-4">
           <div className="w-full md: w-1/2">
             <h1 className="text-xl md:text-4xl font-bold text-secondary">

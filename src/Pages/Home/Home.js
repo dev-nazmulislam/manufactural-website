@@ -2,6 +2,7 @@ import React from "react";
 import BussnessSummary from "./BussnessSummary";
 import Contact from "./Contact";
 import Pars from "./Pars";
+import Review from "./Review";
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
       <Pars />
       <BussnessSummary />
       <Contact></Contact>
+      <Review />
     </div>
   );
 };

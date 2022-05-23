@@ -4,7 +4,7 @@ const useParses = () => {
   const [parts, setParses] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/items")
+    fetch("https://enigmatic-reef-99416.herokuapp.com/items")
       .then((res) => res.json())
       .then((data) => setParses(data));
   }, []);

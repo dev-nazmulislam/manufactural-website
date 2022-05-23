@@ -4,20 +4,24 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.Init";
 import CustomLink from "../CustomLink/CustomLink";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import useOrders from "../../../hooks/useOrders";
+import { Link } from "react-router-dom";
 
 const MenuItems = () => {
   const [user] = useAuthState(auth);
+  const [orders] = useOrders();
+  const userOrders = orders.map((order) => order?.email == user?.email);
 
   return (
     <>
       <CustomLink to="/home">Home</CustomLink>
       <CustomLink to="/pars">Parts</CustomLink>
+      <CustomLink to="/protfolio">Protfolio</CustomLink>
       <CustomLink to="/blog">Blog</CustomLink>
       <CustomLink to="/about">About Us</CustomLink>
-      <CustomLink to="/dashboard">Dashboard</CustomLink>
       <CustomLink to="/cart" className="mr-2">
         <div className="indicator">
-          <span className="indicator-item badge">9</span>
+          <span className="indicator-item badge">{userOrders.length}</span>
           <button className="text-2xl">
             <AiOutlineShoppingCart />
           </button>
@@ -55,22 +59,35 @@ const MenuItems = () => {
               </a>
             </li>
             <li>
-              <button className="btn btn-link">Manage Your Account</button>
+              <Link
+                to="dashboard/account"
+                class="text-base w-full link-accent no-underline"
+              >
+                Manage Account
+              </Link>
             </li>
             <li>
-              <a href="/">Dashboard</a>
+              <Link to="/dashboard" class="w-full link-accent no-underline">
+                Dashboard
+              </Link>
             </li>
             <li>
-              <a href="/">Manage Product</a>
+              <Link to="/dashboard" class="w-full link-accent no-underline">
+                My Orders
+              </Link>
             </li>
             <li>
-              <a href="/">Add Product</a>
+              <Link
+                to="/dashboard/manageProduct"
+                class="w-full link-accent no-underline"
+              >
+                Manage Product
+              </Link>
             </li>
             <li>
-              <a href="/">Setting</a>
-            </li>
-            <li>
-              <span onClick={() => signOut(auth)}>Logout</span>
+              <span className="w-full" onClick={() => signOut(auth)}>
+                Logout
+              </span>
             </li>
           </ul>
         </div>
