@@ -59,9 +59,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {location.pathname !== "/" &&
-      location.pathname !== "/home" &&
-      location?.pathname.split("/").length !== 4 ? (
+      {location.pathname !== "/home" ? (
         <section className="pt-20 pb-5">
           <h1 className="text-center text-4xl text-white uppercase">
             {location.pathname.substr(1)}

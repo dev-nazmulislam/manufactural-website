@@ -43,7 +43,7 @@ const DeleteConfirmModal = ({ deletingDoctor, refetch, setDeletingDoctor }) => {
             >
               Delete
             </button>
-            <label for="delete-confirm-modal" className="btn btn-xs">
+            <label htmlFor="delete-confirm-modal" className="btn btn-xs">
               Cancel
             </label>
           </div>

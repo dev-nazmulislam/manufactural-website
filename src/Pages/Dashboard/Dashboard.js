@@ -2,26 +2,25 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, Outlet } from "react-router-dom";
 import auth from "../../firebase.Init";
-import useAdmin from "../../hooks/useAdmin";
+// import useAdmin from "../../hooks/useAdmin";
+import { MdManageAccounts, MdReviews } from "react-icons/md";
+import { IoIosArrowForward } from "react-icons/io";
+import { AiOutlineUnorderedList, AiOutlineHistory } from "react-icons/ai";
+import { BiPurchaseTag } from "react-icons/bi";
+import { FaUsers, FaProductHunt } from "react-icons/fa";
+import { SiManageiq } from "react-icons/si";
+import "./Dashboard.css";
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
-  const [admin] = useAdmin(user);
+  // const [admin] = useAdmin(user);
   return (
-    <div className="drawer drawer-mobile">
-      <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content">
-        <h2 className="text-2xl font-bold text-purple-500">
-          Welcome to your Dashboard
-        </h2>
-        <Outlet></Outlet>
-      </div>
-      <div className="drawer-side">
-        <label for="dashboard-sidebar" className="drawer-overlay"></label>
-        <ul className="menu p-4 overflow-y-auto w-72 bg-base-100 text-base-content">
+    <div className="flex flex-col md:flex-row">
+      <div className="w-full md:w-1/4 lg:w-1/5 asid-menu">
+        <ul className="menu p-4 overflow-y-auto bg-base-100 text-base-content">
           {/* <!-- Sidebar content here --> */}
-          <div class="card bg-base-100 shadow">
-            <div class="flex my-3">
+          <div className="card bg-base-200 shadow p-0">
+            <div className="flex">
               <div className="w-3/12 p-2">
                 <img
                   className="mr-2"
@@ -31,33 +30,116 @@ const Dashboard = () => {
               </div>
               <div>
                 <h2>Hello,</h2>
-                <h2 class="">{user.displayName}</h2>
+                <h2 className="">
+                  {user?.displayName ? user?.displayName : "Your Name"}
+                </h2>
               </div>
             </div>
           </div>
-          <li>
-            <Link to="/dashboard/account">My Account</Link>
+          <hr className="w-full h-1 my-2 bg-primary" />
+          <li className="mt-3">
+            <div className="flex">
+              <span className="text-xl">
+                <MdManageAccounts />
+              </span>
+              <div className="flex justify-between w-full">
+                <Link to="/dashboard/account">My Account</Link>
+                <span className="text-xl">
+                  <IoIosArrowForward />
+                </span>
+              </div>
+            </div>
           </li>
-          <li>
-            <Link to="/dashboard">Orders</Link>
+          <li className="mt-3">
+            <div className="flex">
+              <span className="text-xl">
+                <AiOutlineUnorderedList />
+              </span>
+              <div className="flex justify-between w-full">
+                <Link to="/dashboard">Orders</Link>
+                <span className="text-xl">
+                  <IoIosArrowForward />
+                </span>
+              </div>
+            </div>
           </li>
-          <li>
-            <Link to="/dashboard/purchase">Purchase</Link>
+          <li className="mt-3">
+            <div className="flex">
+              <span className="text-xl">
+                <BiPurchaseTag />
+              </span>
+              <div className="flex justify-between w-full">
+                <Link to="/dashboard/purchase">Purchase</Link>
+                <span className="text-xl">
+                  <IoIosArrowForward />
+                </span>
+              </div>
+            </div>
           </li>
-          <li>
-            <Link to="/dashboard/review">My Reviews</Link>
+          <li className="mt-3">
+            <div className="flex">
+              <span className="text-xl">
+                <MdReviews />
+              </span>
+              <div className="flex justify-between w-full">
+                <Link to="/dashboard/review">My Reviews</Link>
+                <span className="text-xl">
+                  <IoIosArrowForward />
+                </span>
+              </div>
+            </div>
           </li>
-          <li>
-            <Link to="/dashboard/history">Order History</Link>
+          <li className="mt-3">
+            <div className="flex">
+              <span className="text-xl">
+                <AiOutlineHistory />
+              </span>
+              <div className="flex justify-between w-full">
+                <Link to="/dashboard/history">Order History</Link>
+                <span className="text-xl">
+                  <IoIosArrowForward />
+                </span>
+              </div>
+            </div>
           </li>
-          <li>
-            <Link to="/dashboard/users">All Users</Link>
+          <li className="mt-3">
+            <div className="flex">
+              <span className="text-xl">
+                <FaUsers />
+              </span>
+              <div className="flex justify-between w-full">
+                <Link to="/dashboard/users">All Users</Link>
+                <span className="text-xl">
+                  <IoIosArrowForward />
+                </span>
+              </div>
+            </div>
           </li>
-          <li>
-            <Link to="/dashboard/addProduct">Add a Product</Link>
+          <li className="mt-3">
+            <div className="flex">
+              <span className="text-xl">
+                <FaProductHunt />
+              </span>
+              <div className="flex justify-between w-full">
+                <Link to="/dashboard/addProduct">Add Product</Link>
+                <span className="text-xl">
+                  <IoIosArrowForward />
+                </span>
+              </div>
+            </div>
           </li>
-          <li>
-            <Link to="/dashboard/manageProduct">Manage Product</Link>
+          <li className="mt-3">
+            <div className="flex">
+              <span className="text-xl">
+                <SiManageiq />
+              </span>
+              <div className="flex justify-between w-full">
+                <Link to="/dashboard/manageProduct">Manage Products</Link>
+                <span className="text-xl">
+                  <IoIosArrowForward />
+                </span>
+              </div>
+            </div>
           </li>
           {/* {admin && (
             <>
@@ -73,6 +155,9 @@ const Dashboard = () => {
             </>
           )} */}
         </ul>
+      </div>
+      <div className="w-full md:w-3/4 lg:w-4/5">
+        <Outlet></Outlet>
       </div>
     </div>
   );

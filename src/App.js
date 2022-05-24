@@ -16,6 +16,12 @@ import AllUser from "./Pages/Dashboard/AllUser";
 import AllProduct from "./Pages/Dashboard/AllProduct";
 import ManageProduct from "./Pages/Dashboard/ManageProduct";
 import Purchase from "./Pages/Purchase/Purchase";
+import PersonalInfo from "./Pages/Dashboard/PersonalInfo";
+import InfoChange from "./Pages/Dashboard/InfoChange";
+import AllOrders from "./Pages/Purchase/AllOrders";
+import PanddingOrder from "./Pages/Purchase/PanddingOrder";
+import CancelledOrder from "./Pages/Purchase/CancelledOrder";
+import Complate from "./Pages/Purchase/Complate";
 
 function App() {
   return (
@@ -26,10 +32,18 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="dashboard" element={<Dashboard />}>
           <Route index element={<Orders />} />
-          <Route path="account" element={<Account />} />
+          <Route path="account" element={<Account />}>
+            <Route index element={<PersonalInfo />} />
+            <Route path="changeinfo" element={<InfoChange />} />
+          </Route>
           <Route path="review" element={<MyReviews />} />
           <Route path="history" element={<OrderHistory />} />
-          <Route path="purchase" element={<Purchase />} />
+          <Route path="purchase" element={<Purchase />}>
+            <Route index element={<AllOrders></AllOrders>} />
+            <Route path="pandding" element={<PanddingOrder />} />
+            <Route path="cancelled" element={<CancelledOrder />} />
+            <Route path="complate" element={<Complate />} />
+          </Route>
           <Route path="users" element={<AllUser />} />
           <Route path="addProduct" element={<AllProduct />} />
           <Route path="manageProduct" element={<ManageProduct />} />
