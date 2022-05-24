@@ -9,11 +9,11 @@ import { Link } from "react-router-dom";
 import { MdManageAccounts, MdOutlineDashboardCustomize } from "react-icons/md";
 import { AiOutlineUnorderedList, AiOutlineLogout } from "react-icons/ai";
 import { SiManageiq } from "react-icons/si";
+import useUserOrder from "../../../hooks/useUserOrder";
 
 const MenuItems = () => {
   const [user] = useAuthState(auth);
-  const [orders] = useOrders();
-  const userOrders = orders.map((order) => order?.email == user?.email);
+  const [orders] = useUserOrder("Pandding");
 
   return (
     <>
@@ -24,7 +24,7 @@ const MenuItems = () => {
       <CustomLink to="/about">About Us</CustomLink>
       <CustomLink to="/cart" className="mr-2">
         <div className="indicator">
-          <span className="indicator-item badge">{userOrders.length}</span>
+          <span className="indicator-item badge">{orders.length}</span>
           <button className="text-2xl">
             <AiOutlineShoppingCart />
           </button>

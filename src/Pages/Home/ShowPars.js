@@ -19,7 +19,10 @@ const ShowPars = ({ part }) => {
 
   const navigat = useNavigate();
   const curentOrder = orders.find(
-    (o) => o.product_type === part.product_type && email === o.email
+    (o) =>
+      o.product_type === part.product_type &&
+      email === o.email &&
+      o.orderStatus === "Pandding"
   );
 
   const makeOrder = () => {

@@ -32,7 +32,8 @@ const Purchase = () => {
               <th className="text-xl">Quantity</th>
               <th className="text-xl">Status</th>
               <th className="text-xl">Update</th>
-              <th className="text-xl">Cancelled</th>
+              <th className="text-xl">Cancelle</th>
+              <th className="text-xl">Delete</th>
             </tr>
           </thead>
           <Outlet />

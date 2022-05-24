@@ -3,11 +3,11 @@ import useUserOrder from "../../hooks/useUserOrder";
 import ShowOrders from "./ShowOrders";
 
 const AllOrders = () => {
-  const [orders] = useUserOrder("all");
+  const [orders, setOrder] = useUserOrder("all");
 
   const updateOrder = (item, id) => {
-    delete item._id;
-    item.orderStatus = "Deleted";
+    // delete item._id;
+    item.orderStatus = "Cancelled";
 
     fetch(`http://localhost:5000/update/${id}`, {
       method: "PUT",
@@ -21,6 +21,22 @@ const AllOrders = () => {
         alert("item Updated successfully!!!");
       });
   };
+
+  const deleteOrder = (id) => {
+    const proceed = window.confirm("Are you sure?");
+    if (proceed) {
+      // Send delete data to server
+      const url = `http://localhost:5000/orders/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          const remaining = orders.filter((o) => o._id !== id);
+          setOrder(remaining);
+        });
+    }
+  };
   return (
     <>
       {orders.map((order, index) => (
@@ -28,6 +44,7 @@ const AllOrders = () => {
           key={order._id}
           index={index}
           updateOrder={updateOrder}
+          deleteOrder={deleteOrder}
           order={order}
         />
       ))}

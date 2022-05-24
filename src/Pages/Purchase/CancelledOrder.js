@@ -3,7 +3,7 @@ import useUserOrder from "../../hooks/useUserOrder";
 import ShowOrders from "./ShowOrders";
 
 const CancelledOrder = () => {
-  const [orders] = useUserOrder("Deleted");
+  const [orders] = useUserOrder("Cancelled");
   return (
     <>
       {orders.map((order, index) => (
