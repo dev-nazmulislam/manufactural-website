@@ -22,6 +22,7 @@ import AllOrders from "./Pages/Purchase/AllOrders";
 import PanddingOrder from "./Pages/Purchase/PanddingOrder";
 import CancelledOrder from "./Pages/Purchase/CancelledOrder";
 import Complate from "./Pages/Purchase/Complate";
+import Payment from "./Pages/Purchase/Payment";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
           <Route path="addProduct" element={<AllProduct />} />
           <Route path="manageProduct" element={<ManageProduct />} />
         </Route>
+        <Route path="payment" element={<Payment />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
       </Routes>

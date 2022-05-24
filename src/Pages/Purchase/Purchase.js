@@ -1,10 +1,11 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import useUserOrder from "../../hooks/useUserOrder";
 import "./Purchase.css";
 
 const Purchase = () => {
   const [orders] = useUserOrder("Pandding");
+  const navigate = useNavigate();
   return (
     <div className="w-full">
       <ul className="menu menu-horizontal w-full bg-base-100">
@@ -37,21 +38,27 @@ const Purchase = () => {
             </tr>
           </thead>
           <Outlet />
-          <div>
-            <p>Product:{orders.reduce((n, i) => n + 1, 0)}</p>
-            <p>
-              Quantity:
-              {orders.reduce((n, { quantity }) => n + quantity, 0)}
-            </p>
-            <h1>
-              Price:
-              {orders.reduce(
-                (n, { quantity, price }) => n + quantity * price,
-                0
-              )}
-            </h1>
-          </div>
         </table>
+        <hr className="w-full h-0.5 bg-primary" />
+        <div className="flex justify-around w-full bg-slate-200 py-5">
+          <p className="text-xl">
+            Selected Product: {orders.reduce((n, i) => n + 1, 0)}
+          </p>
+          <p className="text-xl">
+            Product Quantity:
+            {orders.reduce((n, { quantity }) => n + quantity, 0)}
+          </p>
+          <p className="text-xl">
+            All Product Price:
+            {orders.reduce((n, { quantity, price }) => n + quantity * price, 0)}
+          </p>
+          <button
+            onClick={() => navigate("/payment")}
+            className="btn btn-success text-white text-xl"
+          >
+            Place Order
+          </button>
+        </div>
       </div>
     </div>
   );
