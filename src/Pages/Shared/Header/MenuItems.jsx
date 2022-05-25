@@ -48,7 +48,7 @@ const MenuItems = () => {
           </label>
           <ul
             tabIndex="1"
-            className="dropdown-content p-2 shadow bg-base-100 rounded-box w-72 h-screen"
+            className="dropdown-content p-2 shadow bg-base-100 rounded-box w-52 h-screen"
           >
             <li>
               <a href="/">

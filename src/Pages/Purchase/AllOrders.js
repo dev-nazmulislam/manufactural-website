@@ -38,7 +38,7 @@ const AllOrders = () => {
     }
   };
   return (
-    <>
+    <tbody>
       {orders.map((order, index) => (
         <ShowOrders
           key={order._id}
@@ -48,7 +48,7 @@ const AllOrders = () => {
           order={order}
         />
       ))}
-    </>
+    </tbody>
   );
 };
 
