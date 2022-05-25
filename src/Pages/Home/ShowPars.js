@@ -147,7 +147,7 @@ const ShowPars = ({ part }) => {
             onClick={() => makeOrder()}
             className="btn btn-primary text-white font-bold w-full"
           >
-            Place Order
+            Buy Now
           </button>
         </div>
       </div>

@@ -125,7 +125,7 @@ const Login = () => {
             />
           </form>
           <p>
-            <small>
+            <small className="text-lg">
               New to NR Computers{" "}
               <Link className="text-primary" to="/signup">
                 Create New Account

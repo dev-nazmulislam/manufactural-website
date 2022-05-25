@@ -4,7 +4,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.Init";
 import CustomLink from "../CustomLink/CustomLink";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import useOrders from "../../../hooks/useOrders";
 import { Link } from "react-router-dom";
 import { MdManageAccounts, MdOutlineDashboardCustomize } from "react-icons/md";
 import { AiOutlineUnorderedList, AiOutlineLogout } from "react-icons/ai";
@@ -14,6 +13,11 @@ import useUserOrder from "../../../hooks/useUserOrder";
 const MenuItems = () => {
   const [user] = useAuthState(auth);
   const [orders] = useUserOrder("Pandding");
+
+  const logOut = () => {
+    signOut(auth);
+    localStorage.removeItem("accessToken");
+  };
 
   return (
     <>
@@ -112,7 +116,7 @@ const MenuItems = () => {
                 <span className="text-xl">
                   <AiOutlineLogout />
                 </span>
-                <span className="w-full" onClick={() => signOut(auth)}>
+                <span className="w-full" onClick={logOut}>
                   Logout
                 </span>
               </div>
