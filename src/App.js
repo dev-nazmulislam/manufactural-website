@@ -9,9 +9,7 @@ import SignUp from "./Pages/Login/SignUp";
 import Home from "./Pages/Home/Home";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Account from "./Pages/Dashboard/Account";
-import Orders from "./Pages/Dashboard/Orders";
 import MyReviews from "./Pages/Dashboard/MyReviews";
-import OrderHistory from "./Pages/Dashboard/OrderHistory";
 import AllUser from "./Pages/Dashboard/AllUser";
 import AllProduct from "./Pages/Dashboard/AllProduct";
 import ManageProduct from "./Pages/Dashboard/ManageProduct";
@@ -23,6 +21,8 @@ import PanddingOrder from "./Pages/Purchase/PanddingOrder";
 import CancelledOrder from "./Pages/Purchase/CancelledOrder";
 import Complate from "./Pages/Purchase/Complate";
 import Payment from "./Pages/Purchase/Payment";
+import RequireAuth from "./Pages/Shared/RequerAuth/RequireAuth";
+import RequireAdmin from "./Pages/Shared/RequerAuth/RequireAdmin";
 
 function App() {
   return (
@@ -31,23 +31,49 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="dashboard" element={<Dashboard />}>
-          <Route index element={<Orders />} />
+        <Route
+          path="dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
           <Route path="account" element={<Account />}>
             <Route index element={<PersonalInfo />} />
             <Route path="changeinfo" element={<InfoChange />} />
           </Route>
-          <Route path="review" element={<MyReviews />} />
-          <Route path="history" element={<OrderHistory />} />
           <Route path="purchase" element={<Purchase />}>
             <Route index element={<AllOrders></AllOrders>} />
             <Route path="pandding" element={<PanddingOrder />} />
             <Route path="cancelled" element={<CancelledOrder />} />
             <Route path="complate" element={<Complate />} />
           </Route>
-          <Route path="users" element={<AllUser />} />
-          <Route path="addProduct" element={<AllProduct />} />
-          <Route path="manageProduct" element={<ManageProduct />} />
+          <Route path="review" element={<MyReviews />} />
+          <Route
+            path="users"
+            element={
+              <RequireAdmin>
+                <AllUser />
+              </RequireAdmin>
+            }
+          />
+          <Route
+            path="addProduct"
+            element={
+              <RequireAdmin>
+                <AllProduct />
+              </RequireAdmin>
+            }
+          />
+          <Route
+            path="manageProduct"
+            element={
+              <RequireAdmin>
+                <ManageProduct />
+              </RequireAdmin>
+            }
+          />
         </Route>
         <Route path="payment" element={<Payment />} />
         <Route path="login" element={<Login />} />

@@ -6,13 +6,15 @@ import CustomLink from "../CustomLink/CustomLink";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { MdManageAccounts, MdOutlineDashboardCustomize } from "react-icons/md";
-import { AiOutlineUnorderedList, AiOutlineLogout } from "react-icons/ai";
+import { AiOutlineLogout } from "react-icons/ai";
 import { SiManageiq } from "react-icons/si";
 import useUserOrder from "../../../hooks/useUserOrder";
+import useAdmin from "../../../hooks/useAdmin";
 
 const MenuItems = () => {
   const [user] = useAuthState(auth);
   const [orders] = useUserOrder("Pandding");
+  const [admin] = useAdmin(user);
 
   const logOut = () => {
     signOut(auth);
@@ -83,34 +85,31 @@ const MenuItems = () => {
                 <span className="text-xl">
                   <MdOutlineDashboardCustomize />
                 </span>
-                <Link to="/dashboard" className="link-accent no-underline">
+                <Link
+                  to="/dashboard/account"
+                  className="link-accent no-underline"
+                >
                   Dashboard
                 </Link>
               </div>
             </li>
-            <li className="mt-3">
-              <div className="flex w-full">
-                <span className="text-xl">
-                  <AiOutlineUnorderedList />
-                </span>
-                <Link to="/dashboard" className="link-accent no-underline">
-                  My Orders
-                </Link>
-              </div>
-            </li>
-            <li className="mt-3">
-              <div className="flex w-full">
-                <span className="text-xl">
-                  <SiManageiq />
-                </span>
-                <Link
-                  to="/dashboard/manageProduct"
-                  className="link-accent no-underline"
-                >
-                  Manage Product
-                </Link>
-              </div>
-            </li>
+            {admin && (
+              <>
+                <li className="mt-3">
+                  <div className="flex w-full">
+                    <span className="text-xl">
+                      <SiManageiq />
+                    </span>
+                    <Link
+                      to="/dashboard/manageProduct"
+                      className="link-accent no-underline"
+                    >
+                      Manage Product
+                    </Link>
+                  </div>
+                </li>
+              </>
+            )}
             <li className="mt-3">
               <div className="flex w-full">
                 <span className="text-xl">
