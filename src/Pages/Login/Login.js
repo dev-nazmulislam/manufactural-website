@@ -1,5 +1,8 @@
-import React, { useEffect } from "react";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import React, { useEffect, useRef } from "react";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import useToken from "../../hooks/useToken";
@@ -10,6 +13,9 @@ import SocialLogin from "./SocialLogin";
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+
+  const [sendPasswordResetEmail, sending, error2] =
+    useSendPasswordResetEmail(auth);
 
   const {
     register,
@@ -45,6 +51,17 @@ const Login = () => {
   const onSubmit = (data) => {
     signInWithEmailAndPassword(data.email, data.password);
   };
+
+  async function handlePasswordReset() {
+    const email = prompt("Please enter your Email");
+    if (email) {
+      await sendPasswordResetEmail(email);
+      alert("Sent email");
+      navigate(from, { replace: true });
+    } else {
+      alert("Please provide a email.");
+    }
+  }
 
   return (
     <div className="flex h-screen justify-center items-center">
@@ -131,6 +148,15 @@ const Login = () => {
                 Create New Account
               </Link>
             </small>
+          </p>
+          <p>
+            Forget your password?{" "}
+            <button
+              onClick={handlePasswordReset}
+              className="text-primary btn btn-link"
+            >
+              Reset Password
+            </button>
           </p>
           {<SocialLogin />}
         </div>
