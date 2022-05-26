@@ -1,10 +1,10 @@
 ### This is symple Manufacturer-website
 
-[Live website](https://books-store-dfd37.web.app/)
+[Live website](https://nr-computers.web.app/)
 
-[Client site code](https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-dev-nazmulislam)
+[Client site code](https://github.com/programming-hero-web-course1/manufacturer-website-client-side-dev-nazmulislam)
 
-[Server site code](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-dev-nazmulislam)
+[Server site code](https://github.com/programming-hero-web-course1/manufacturer-website-server-side-dev-nazmulislam)
 
 ### This website made with.
 
