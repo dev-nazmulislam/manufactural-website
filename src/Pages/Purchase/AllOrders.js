@@ -9,7 +9,7 @@ const AllOrders = () => {
     // delete item._id;
     item.orderStatus = "Cancelled";
 
-    fetch(`http://localhost:5000/update/${id}`, {
+    fetch(`https://enigmatic-reef-99416.herokuapp.com/update/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -26,7 +26,7 @@ const AllOrders = () => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
       // Send delete data to server
-      const url = `http://localhost:5000/orders/${id}`;
+      const url = `https://enigmatic-reef-99416.herokuapp.com/orders/${id}`;
       fetch(url, {
         method: "DELETE",
       })

@@ -27,7 +27,6 @@ const MenuItems = () => {
       <CustomLink to="/pars">Parts</CustomLink>
       <CustomLink to="/protfolio">Protfolio</CustomLink>
       <CustomLink to="/blog">Blog</CustomLink>
-      <CustomLink to="/about">About Us</CustomLink>
       <CustomLink to="/cart" className="mr-2">
         <div className="indicator">
           <span className="indicator-item badge">{orders.length}</span>

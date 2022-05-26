@@ -31,7 +31,7 @@ const ShowPars = ({ product }) => {
       newOrder.quantity = order;
       newOrder.email = email;
       newOrder.time = Date().toLocaleString();
-      fetch(`http://localhost:5000/orders`, {
+      fetch(`https://enigmatic-reef-99416.herokuapp.com/orders`, {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -57,7 +57,7 @@ const ShowPars = ({ product }) => {
     newOrder.quantity = order;
     newOrder.email = email;
     newOrder.time = Date().toLocaleString();
-    fetch(`http://localhost:5000/orders`, {
+    fetch(`https://enigmatic-reef-99416.herokuapp.com/orders`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -71,7 +71,7 @@ const ShowPars = ({ product }) => {
     // newOrder.quantity = order;
     // newOrder.email = email;
     // newOrder.time = Date().toLocaleString();
-    // fetch(`http://localhost:5000/orders`, {
+    // fetch(`https://enigmatic-reef-99416.herokuapp.com/orders`, {
     //   method: "POST",
     //   headers: {
     //     "content-type": "application/json",

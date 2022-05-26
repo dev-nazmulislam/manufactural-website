@@ -9,7 +9,7 @@ const useUserOrder = (orderStatus) => {
   useEffect(
     (status) => {
       fetch(
-        `http://localhost:5000/order?email=${user?.email}&status=${orderStatus}`
+        `https://enigmatic-reef-99416.herokuapp.com/order?email=${user?.email}&status=${orderStatus}`
       )
         .then((res) => res.json())
         .then((data) => setOrders(data));

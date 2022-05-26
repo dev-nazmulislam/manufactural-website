@@ -8,7 +8,7 @@ const ShowProduct = ({ product, index }) => {
   const removeProduct = () => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
-      fetch(`http://localhost:5000/items/${_id}`, {
+      fetch(`https://enigmatic-reef-99416.herokuapp.com/items/${_id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

@@ -13,13 +13,15 @@ const AddProduc = () => {
   } = useForm();
 
   const { data: services, isLoading } = useQuery("services", () =>
-    fetch("http://localhost:5000/items").then((res) => res.json())
+    fetch("https://enigmatic-reef-99416.herokuapp.com/items").then((res) =>
+      res.json()
+    )
   );
 
   const imageStorageKey = "4295ac4d47b569312bea67b440cdbdbb";
 
   const onSubmit = async (data) => {
-    fetch("http://localhost:5000/items", {
+    fetch("https://enigmatic-reef-99416.herokuapp.com/items", {
       method: "POST",
       headers: {
         "content-type": "application/json",

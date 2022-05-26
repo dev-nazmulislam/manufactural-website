@@ -9,7 +9,7 @@ const AllProducts = () => {
     isLoading,
     refetch,
   } = useQuery("items", () =>
-    fetch("http://localhost:5000/items", {
+    fetch("https://enigmatic-reef-99416.herokuapp.com/items", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

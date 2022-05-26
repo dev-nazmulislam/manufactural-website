@@ -16,7 +16,7 @@ const CheckoutForm = ({ total }) => {
   const { price } = total;
 
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
+    fetch("https://enigmatic-reef-99416.herokuapp.com/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
