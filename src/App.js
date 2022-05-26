@@ -29,6 +29,7 @@ import AllProducts from "./Pages/Dashboard/AllProducts";
 import UpdateProduct from "./Pages/Dashboard/UpdateProduct";
 import AllUserOrders from "./Pages/Purchase/AllUserOrders";
 import Blogs from "./Pages/Blog/Blogs";
+import Protfolio from "./Pages/Protfolio/Protfolio";
 
 function App() {
   return (
@@ -89,7 +90,7 @@ function App() {
         </Route>
         <Route path="payment" element={<Payment />} />
         <Route path="blog" element={<Blogs />} />
-        {/* <Route path="protfolio" element={}/> */}
+        <Route path="protfolio" element={<Protfolio />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
       </Routes>
