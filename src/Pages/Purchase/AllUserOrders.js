@@ -1,16 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import React from "react";
+import useOrders from "../../hooks/useOrders";
 
 import "./Purchase.css";
 import ShowOrders from "./ShowOrders";
 
 const AllUserOrders = () => {
-  const [orders, setOrders] = useState([]);
-  useEffect(() => {
-    fetch("https://enigmatic-reef-99416.herokuapp.com/orders")
-      .then((result) => result.json())
-      .then((data) => setOrders(data));
-  }, [orders]);
+  const [orders, setOrders] = useOrders();
 
   const updateOrder = (item, id) => {
     // delete item._id;

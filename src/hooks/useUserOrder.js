@@ -6,16 +6,13 @@ const useUserOrder = (orderStatus) => {
   const [user] = useAuthState(auth);
   const [orders, setOrders] = useState([]);
 
-  useEffect(
-    (status) => {
-      fetch(
-        `https://enigmatic-reef-99416.herokuapp.com/order?email=${user?.email}&status=${orderStatus}`
-      )
-        .then((res) => res.json())
-        .then((data) => setOrders(data));
-    },
-    [orders]
-  );
+  useEffect(() => {
+    fetch(
+      `https://enigmatic-reef-99416.herokuapp.com/order?email=${user?.email}&status=${orderStatus}`
+    )
+      .then((res) => res.json())
+      .then((data) => setOrders(data));
+  }, [orders]);
 
   return [orders, setOrders];
 };
