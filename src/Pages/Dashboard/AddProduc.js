@@ -32,10 +32,10 @@ const AddProduc = () => {
       .then((res) => res.json())
       .then((inserted) => {
         if (inserted.insertedId) {
-          toast.success("Doctor added successfully");
+          toast.success("Product added successfully");
           reset();
         } else {
-          toast.error("Failed to add the doctor");
+          toast.error("Failed to add the Prodcut");
         }
       });
   };

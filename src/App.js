@@ -30,6 +30,7 @@ import UpdateProduct from "./Pages/Dashboard/UpdateProduct";
 import AllUserOrders from "./Pages/Purchase/AllUserOrders";
 import Blogs from "./Pages/Blog/Blogs";
 import Protfolio from "./Pages/Protfolio/Protfolio";
+import NotFound from "./Pages/Shared/NotFound/NotFound";
 
 function App() {
   return (
@@ -93,6 +94,7 @@ function App() {
         <Route path="protfolio" element={<Protfolio />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
       <ToastContainer />

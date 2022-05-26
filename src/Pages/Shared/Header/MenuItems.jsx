@@ -27,6 +27,7 @@ const MenuItems = () => {
       <CustomLink to="/pars">Parts</CustomLink>
       <CustomLink to="/protfolio">Protfolio</CustomLink>
       <CustomLink to="/blog">Blog</CustomLink>
+      {user && <CustomLink to="/dashboard/purchase">Dashboard</CustomLink>}
       <CustomLink to="/cart" className="mr-2">
         <div className="indicator">
           <span className="indicator-item badge">{orders.length}</span>
