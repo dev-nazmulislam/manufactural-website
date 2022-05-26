@@ -8,7 +8,13 @@ const useUserOrder = (orderStatus) => {
 
   useEffect(() => {
     fetch(
-      `https://enigmatic-reef-99416.herokuapp.com/order?email=${user?.email}&status=${orderStatus}`
+      `https://enigmatic-reef-99416.herokuapp.com/order?email=${user?.email}&status=${orderStatus}`,
+      {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
     )
       .then((res) => res.json())
       .then((data) => setOrders(data));
