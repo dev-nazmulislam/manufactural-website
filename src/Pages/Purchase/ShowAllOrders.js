@@ -2,13 +2,7 @@ import React from "react";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { BiEdit } from "react-icons/bi";
 
-const ShowOrders = ({
-  order,
-  index,
-  updateOrder,
-  deleteOrder,
-  updateQuantity,
-}) => {
+const ShowAllOrders = ({ order, index, deleteOrder }) => {
   return (
     <tr>
       <th className="text-lg">{index + 1}</th>
@@ -19,22 +13,6 @@ const ShowOrders = ({
       <td className="text-lg">{order.price}</td>
       <td className="text-lg">{order.quantity}</td>
       <td className="text-lg">{order.orderStatus}</td>
-      <td className="text-4xl text-primary">
-        <button
-          onClick={() => updateQuantity(order, order._id)}
-          className="link link-primary"
-        >
-          <BiEdit />
-        </button>
-      </td>
-      <td className="text-2xl">
-        <button
-          onClick={() => updateOrder(order, order._id)}
-          className="link link-primary"
-        >
-          Cancel
-        </button>
-      </td>
       <td>
         <button
           onClick={() => deleteOrder(order._id)}
@@ -47,4 +25,4 @@ const ShowOrders = ({
   );
 };
 
-export default ShowOrders;
+export default ShowAllOrders;

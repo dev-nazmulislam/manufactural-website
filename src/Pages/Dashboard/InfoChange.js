@@ -65,10 +65,7 @@ const InfoChange = () => {
           <span className="label-text-alt text-xl">Profile Image</span>
         </label>
         <div className="w-full flex flex-col md:w-6/12 mx-auto">
-          <img
-            src={"https://i.ibb.co/M8pgDX9/1024px-User-avatar-svg.png"}
-            alt=""
-          />
+          <img src={user?.photoURL} alt="Profile pic" />
           <button className="btn text-white text-xl">Change Photo</button>
         </div>
         <hr className="mt-5 h-0.5 bg-neutral" />

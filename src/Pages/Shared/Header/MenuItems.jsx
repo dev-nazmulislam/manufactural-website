@@ -41,10 +41,7 @@ const MenuItems = () => {
           <label tabIndex="1">
             <div className="avatar">
               <div className="w-8 rounded-full ring ring-primary ">
-                <img
-                  src="https://api.lorem.space/image/face?hash=3174"
-                  alt="Profile pic"
-                />
+                <img src={user?.photoURL} alt="Profile pic" />
               </div>
             </div>
           </label>
@@ -56,10 +53,7 @@ const MenuItems = () => {
               <a href="/">
                 <div className="flex flex-col items-center">
                   <div className="w-1/2">
-                    <img
-                      src="https://api.lorem.space/image/face?hash=3174"
-                      alt="Profile pic"
-                    />
+                    <img src={user?.photoURL} alt="Profile pic" />
                   </div>
                   <div>
                     <h2 className="">{user?.email ? user?.email : ""}</h2>

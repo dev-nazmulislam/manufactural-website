@@ -25,11 +25,6 @@ const ShowProduct = ({ product, index }) => {
       <td>{price}</td>
       <td>{abalableQuantity}</td>
       <td>
-        <button className="text-4xl text-secondary">
-          <BiEdit />
-        </button>
-      </td>
-      <td>
         <button onClick={removeProduct} className="text-4xl text-red-500 ">
           <RiDeleteBinLine />
         </button>

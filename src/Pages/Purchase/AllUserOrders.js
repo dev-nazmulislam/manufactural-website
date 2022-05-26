@@ -1,28 +1,10 @@
 import React from "react";
 import useOrders from "../../hooks/useOrders";
-
 import "./Purchase.css";
-import ShowOrders from "./ShowOrders";
+import ShowAllOrders from "./ShowAllOrders";
 
 const AllUserOrders = () => {
   const [orders, setOrders] = useOrders();
-
-  const updateOrder = (item, id) => {
-    // delete item._id;
-    item.orderStatus = "Cancelled";
-
-    fetch(`https://enigmatic-reef-99416.herokuapp.com/update/${id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(item),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        alert("item Updated successfully!!!");
-      });
-  };
 
   const deleteOrder = (id) => {
     const proceed = window.confirm("Are you sure?");
@@ -51,17 +33,14 @@ const AllUserOrders = () => {
               <th className="text-xl">Price</th>
               <th className="text-xl">Quantity</th>
               <th className="text-xl">Status</th>
-              <th className="text-xl">Update</th>
-              <th className="text-xl">Cancelle</th>
               <th className="text-xl">Delete</th>
             </tr>
           </thead>
           <tbody>
             {orders.map((order, index) => (
-              <ShowOrders
+              <ShowAllOrders
                 key={order._id}
                 index={index}
-                updateOrder={updateOrder}
                 deleteOrder={deleteOrder}
                 order={order}
               />

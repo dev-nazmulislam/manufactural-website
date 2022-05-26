@@ -7,7 +7,6 @@ import { MdManageAccounts, MdReviews } from "react-icons/md";
 import { IoIosArrowForward } from "react-icons/io";
 import { BiPurchaseTag } from "react-icons/bi";
 import { FaUsers, FaProductHunt } from "react-icons/fa";
-import { SiManageiq } from "react-icons/si";
 import "./Dashboard.css";
 
 const Dashboard = () => {
@@ -21,11 +20,7 @@ const Dashboard = () => {
           <div className="card bg-base-200 shadow p-0">
             <div className="flex">
               <div className="w-3/12 p-2">
-                <img
-                  className="mr-2"
-                  src="https://i.ibb.co/M8pgDX9/1024px-User-avatar-svg.png"
-                  alt=""
-                />
+                <img src={user?.photoURL} alt="Profile pic" />
               </div>
               <div>
                 <h2>Hello,</h2>

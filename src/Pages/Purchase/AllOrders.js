@@ -21,6 +21,29 @@ const AllOrders = () => {
         alert("item Updated successfully!!!");
       });
   };
+  const updateQuantity = (item, id) => {
+    const newQuantity = prompt("Please enter New quantity");
+    if (
+      newQuantity >= item.orderQuantity &&
+      newQuantity <= item.abalableQuantity
+    ) {
+      item.orderQuantity = newQuantity;
+
+      fetch(`https://enigmatic-reef-99416.herokuapp.com/update/${id}`, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(item),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          alert("item Updated successfully!!!");
+        });
+    } else {
+      alert("Invalide Quantity");
+    }
+  };
 
   const deleteOrder = (id) => {
     const proceed = window.confirm("Are you sure?");
@@ -45,6 +68,7 @@ const AllOrders = () => {
           index={index}
           updateOrder={updateOrder}
           deleteOrder={deleteOrder}
+          updateQuantity={updateQuantity}
           order={order}
         />
       ))}

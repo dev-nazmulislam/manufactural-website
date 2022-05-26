@@ -34,7 +34,6 @@ const AllProducts = () => {
               <th>Product Name</th>
               <th>Price</th>
               <th>Abalable Qunatity</th>
-              <th>Update</th>
               <th>Delete</th>
             </tr>
           </thead>
