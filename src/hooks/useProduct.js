@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useParses = () => {
+const useProduct = () => {
   const [parts, setParses] = useState([]);
 
   useEffect(() => {
@@ -12,4 +12,4 @@ const useParses = () => {
   return [parts, setParses];
 };
 
-export default useParses;
+export default useProduct;

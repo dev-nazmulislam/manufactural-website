@@ -9,9 +9,8 @@ import SignUp from "./Pages/Login/SignUp";
 import Home from "./Pages/Home/Home";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Account from "./Pages/Dashboard/Account";
-import MyReviews from "./Pages/Dashboard/MyReviews";
 import AllUser from "./Pages/Dashboard/AllUser";
-import AllProduct from "./Pages/Dashboard/AllProduct";
+import Products from "./Pages/Dashboard/Products";
 import ManageProduct from "./Pages/Dashboard/ManageProduct";
 import Purchase from "./Pages/Purchase/Purchase";
 import PersonalInfo from "./Pages/Dashboard/PersonalInfo";
@@ -23,6 +22,12 @@ import Complate from "./Pages/Purchase/Complate";
 import Payment from "./Pages/Purchase/Payment";
 import RequireAuth from "./Pages/Shared/RequerAuth/RequireAuth";
 import RequireAdmin from "./Pages/Shared/RequerAuth/RequireAdmin";
+import Review from "./Pages/Home/Review";
+import AddProduc from "./Pages/Dashboard/AddProduc";
+import DeleteProdcut from "./Pages/Dashboard/DeleteProdcut";
+import AllProducts from "./Pages/Dashboard/AllProducts";
+import UpdateProduct from "./Pages/Dashboard/UpdateProduct";
+import AllUserOrders from "./Pages/Purchase/AllUserOrders";
 
 function App() {
   return (
@@ -49,7 +54,7 @@ function App() {
             <Route path="cancelled" element={<CancelledOrder />} />
             <Route path="complate" element={<Complate />} />
           </Route>
-          <Route path="review" element={<MyReviews />} />
+          <Route path="review" element={<Review />} />
           <Route
             path="users"
             element={
@@ -59,13 +64,19 @@ function App() {
             }
           />
           <Route
-            path="addProduct"
+            path="product"
             element={
               <RequireAdmin>
-                <AllProduct />
+                <Products />
               </RequireAdmin>
             }
-          />
+          >
+            <Route index element={<AllProducts />} />
+            <Route path="add" element={<AddProduc />} />
+            <Route path="delete" element={<DeleteProdcut />} />
+            <Route path="update" element={<UpdateProduct />} />
+          </Route>
+          <Route path="allorder" element={<AllUserOrders />}></Route>
           <Route
             path="manageProduct"
             element={

@@ -84,7 +84,7 @@ const Dashboard = () => {
                     <FaUsers />
                   </span>
                   <div className="flex justify-between w-full">
-                    <Link to="/dashboard/users">All Users</Link>
+                    <Link to="/dashboard/users">Manage Users</Link>
                     <span className="text-xl">
                       <IoIosArrowForward />
                     </span>
@@ -97,7 +97,7 @@ const Dashboard = () => {
                     <FaProductHunt />
                   </span>
                   <div className="flex justify-between w-full">
-                    <Link to="/dashboard/addProduct">Add Product</Link>
+                    <Link to="/dashboard/allorder">All User Orders</Link>
                     <span className="text-xl">
                       <IoIosArrowForward />
                     </span>
@@ -107,10 +107,10 @@ const Dashboard = () => {
               <li className="mt-3">
                 <div className="flex">
                   <span className="text-xl">
-                    <SiManageiq />
+                    <FaProductHunt />
                   </span>
                   <div className="flex justify-between w-full">
-                    <Link to="/dashboard/manageProduct">Manage Products</Link>
+                    <Link to="/dashboard/product">Manage Products</Link>
                     <span className="text-xl">
                       <IoIosArrowForward />
                     </span>

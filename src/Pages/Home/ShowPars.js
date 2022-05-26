@@ -9,25 +9,25 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.Init";
 import useOrders from "../../hooks/useOrders";
 
-const ShowPars = ({ part }) => {
+const ShowPars = ({ product }) => {
   const [user, loading, error] = useAuthState(auth);
   const email = user?.email;
   const { name, price, abalableQuantity, description, img, orderQuantity } =
-    part;
+    product;
   const [order, setOrder] = useState(orderQuantity);
   const [orders] = useOrders();
 
   const navigat = useNavigate();
   const curentOrder = orders.find(
     (o) =>
-      o.product_type === part.product_type &&
+      o.product_type === product.product_type &&
       email === o.email &&
       o.orderStatus === "Pandding"
   );
 
   const makeOrder = () => {
     if (order >= orderQuantity && order <= abalableQuantity) {
-      const newOrder = part;
+      const newOrder = product;
       newOrder.quantity = order;
       newOrder.email = email;
       newOrder.time = Date().toLocaleString();
@@ -53,7 +53,7 @@ const ShowPars = ({ part }) => {
 
   // Product Add to cart
   const addToCart = () => {
-    const newOrder = part;
+    const newOrder = product;
     newOrder.quantity = order;
     newOrder.email = email;
     newOrder.time = Date().toLocaleString();
@@ -66,6 +66,20 @@ const ShowPars = ({ part }) => {
     })
       .then((res) => res.json())
       .then((result) => {});
+
+    // const newOrder = product;
+    // newOrder.quantity = order;
+    // newOrder.email = email;
+    // newOrder.time = Date().toLocaleString();
+    // fetch(`http://localhost:5000/orders`, {
+    //   method: "POST",
+    //   headers: {
+    //     "content-type": "application/json",
+    //   },
+    //   body: JSON.stringify(newOrder),
+    // })
+    //   .then((res) => res.json())
+    //   .then((result) => {});
   };
 
   return (

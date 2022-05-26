@@ -101,7 +101,7 @@ const MenuItems = () => {
                       <SiManageiq />
                     </span>
                     <Link
-                      to="/dashboard/manageProduct"
+                      to="dashboard/product"
                       className="link-accent no-underline"
                     >
                       Manage Product

@@ -1,13 +1,13 @@
 import React from "react";
 import BussnessSummary from "./BussnessSummary";
 import Contact from "./Contact";
-import Pars from "./Pars";
+import Products from "./Products";
 import Review from "./Review";
 
 const Home = () => {
   return (
     <div>
-      <Pars />
+      <Products />
       <BussnessSummary />
       <Contact></Contact>
       <Review />
